@@ -546,7 +546,7 @@
 			{
 				if($row_column["extra"] != "auto_increment")
 				{
-					$list .= '			$item[\'' . $row_column['column_name'] . '\'] = $' .$row_column['column_name'] . '_lol;' . PHP_EOL;
+					$list .= '			$item[\'' . $row_column['column_name'] . '\'] = $' .$row_column['column_name'] . ';' . PHP_EOL;
 				}
 			}
 
