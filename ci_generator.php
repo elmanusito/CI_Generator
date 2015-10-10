@@ -524,7 +524,7 @@
 						$list .= '$' .$row_column['column_name'] . ', ';
 					} else
 					{
-						$list .= $row_column['column_name'] . '';
+						$list .= '$' .$row_column['column_name'] . '';
 						$index = 1;
 					}
 				}
@@ -546,7 +546,7 @@
 			{
 				if($row_column["extra"] != "auto_increment")
 				{
-					$list .= '			$item[\'' . $row_column['column_name'] . '\'] = $' .$row_column['column_name'] . ';' . PHP_EOL;
+					$list .= '			$item[\'' . $row_column['column_name'] . '\'] = $' .$row_column['column_name'] . '_lol;' . PHP_EOL;
 				}
 			}
 
@@ -609,4 +609,8 @@
 	}
 
 	$ci_generator = new CI_generator($this);
+	$ci_generator->prefix_model = 'CI_';
+	$ci_generator->prefix_controller = 'MY_';
+	$ci_generator->models_exported_folder = '../../../models';
+	$ci_generator->controllers_exported_folder = '../../../controllers';
 	$ci_generator->generate();
